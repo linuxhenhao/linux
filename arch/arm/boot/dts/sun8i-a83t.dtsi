@@ -453,7 +453,7 @@
 
 		csi0: csi@01cb0000 {
 			compatible = "allwinner,sun8i-a83t-csi";
-			reg = <0x01cb0000 0x1000>; /* manual says 0x40000 size */
+			reg = <0x01cb0000 0x4000>;
 			#address-cells = <1>;
 			#size-cells = <0>;
 			interrupts = <GIC_SPI 84 IRQ_TYPE_LEVEL_HIGH>;
