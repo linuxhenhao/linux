@@ -209,15 +209,32 @@
 		pins = "PG11";
 		function = "gpio_out";
 	};
+
+	gmac_power_pin_orangepi: gmac_power_pin@0 {
+		pins = "PD6";
+		function = "gpio_out";
+	};
+
+	usb0_id_detect_pin: usb0_id_detect_pin@0 {
+		pins = "PG12";
+		function = "gpio_in";
+	};
+};
+
+&r_pio {
+	usb0_vbus_pin_opiplus: usb0_vbus_pin@0 {
+		pins = "PL2";
+		function = "gpio_out";
+	};
 };
 
 &reg_usb0_vbus {
+	pinctrl-0 = <&usb0_vbus_pin_opiplus>;
 	gpio = <&r_pio 0 2 GPIO_ACTIVE_HIGH>; /* PL2 */
 	status = "okay";
 };
 
 &usb_otg {
-	pinctrl-0 = <&usb0_vbus_pin_opiplus>;
 	dr_mode = "peripheral";
 	status = "okay";
 };
